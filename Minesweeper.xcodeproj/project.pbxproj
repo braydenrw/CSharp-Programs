@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA281EBE1AEEC8F400B94E77 /* MyMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = CA281EBD1AEEC8F400B94E77 /* MyMatrix.m */; };
+		CA7022F01AFD3376005EFF5D /* NSButtonCellTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7022EF1AFD3376005EFF5D /* NSButtonCellTitle.m */; };
 		CA975AC51ADD8B2C00D808BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA975AC41ADD8B2C00D808BB /* AppDelegate.m */; };
 		CA975AC71ADD8B2C00D808BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA975AC61ADD8B2C00D808BB /* main.m */; };
 		CA975ACA1ADD8B2C00D808BB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA975AC91ADD8B2C00D808BB /* ViewController.m */; };
 		CA975ACC1ADD8B2C00D808BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA975ACB1ADD8B2C00D808BB /* Images.xcassets */; };
 		CA975ACF1ADD8B2C00D808BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA975ACD1ADD8B2C00D808BB /* Main.storyboard */; };
 		CA975ADB1ADD8B2D00D808BB /* MinesweeperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA975ADA1ADD8B2D00D808BB /* MinesweeperTests.m */; };
+		CABC2C181AEECD490068600F /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = CABC2C171AEECD490068600F /* Cell.m */; };
+		CABC2C1B1AEECD540068600F /* MineField.m in Sources */ = {isa = PBXBuildFile; fileRef = CABC2C1A1AEECD540068600F /* MineField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA281EBC1AEEC89200B94E77 /* MyMatrix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyMatrix.h; sourceTree = "<group>"; };
+		CA281EBD1AEEC8F400B94E77 /* MyMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMatrix.m; sourceTree = "<group>"; };
+		CA7022EE1AFD3376005EFF5D /* NSButtonCellTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSButtonCellTitle.h; sourceTree = "<group>"; };
+		CA7022EF1AFD3376005EFF5D /* NSButtonCellTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSButtonCellTitle.m; sourceTree = "<group>"; };
 		CA975ABE1ADD8B2C00D808BB /* Minesweeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minesweeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA975AC21ADD8B2C00D808BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA975AC31ADD8B2C00D808BB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -38,6 +46,10 @@
 		CA975AD41ADD8B2D00D808BB /* MinesweeperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinesweeperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA975AD91ADD8B2D00D808BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA975ADA1ADD8B2D00D808BB /* MinesweeperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MinesweeperTests.m; sourceTree = "<group>"; };
+		CABC2C161AEECD490068600F /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		CABC2C171AEECD490068600F /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		CABC2C191AEECD540068600F /* MineField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineField.h; sourceTree = "<group>"; };
+		CABC2C1A1AEECD540068600F /* MineField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +75,6 @@
 			children = (
 				CA975AC01ADD8B2C00D808BB /* Minesweeper */,
 				CA975AD71ADD8B2D00D808BB /* MinesweeperTests */,
-				CA975ABF1ADD8B2C00D808BB /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,15 +85,24 @@
 				CA975AD41ADD8B2D00D808BB /* MinesweeperTests.xctest */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		CA975AC01ADD8B2C00D808BB /* Minesweeper */ = {
 			isa = PBXGroup;
 			children = (
+				CABC2C191AEECD540068600F /* MineField.h */,
+				CABC2C1A1AEECD540068600F /* MineField.m */,
+				CABC2C161AEECD490068600F /* Cell.h */,
+				CABC2C171AEECD490068600F /* Cell.m */,
+				CA7022EE1AFD3376005EFF5D /* NSButtonCellTitle.h */,
+				CA7022EF1AFD3376005EFF5D /* NSButtonCellTitle.m */,
 				CA975AC31ADD8B2C00D808BB /* AppDelegate.h */,
 				CA975AC41ADD8B2C00D808BB /* AppDelegate.m */,
 				CA975AC81ADD8B2C00D808BB /* ViewController.h */,
 				CA975AC91ADD8B2C00D808BB /* ViewController.m */,
+				CA281EBC1AEEC89200B94E77 /* MyMatrix.h */,
+				CA281EBD1AEEC8F400B94E77 /* MyMatrix.m */,
 				CA975ACB1ADD8B2C00D808BB /* Images.xcassets */,
 				CA975ACD1ADD8B2C00D808BB /* Main.storyboard */,
 				CA975AC11ADD8B2C00D808BB /* Supporting Files */,
@@ -93,6 +113,7 @@
 		CA975AC11ADD8B2C00D808BB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CA975ABF1ADD8B2C00D808BB /* Products */,
 				CA975AC21ADD8B2C00D808BB /* Info.plist */,
 				CA975AC61ADD8B2C00D808BB /* main.m */,
 			);
@@ -215,6 +236,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CABC2C181AEECD490068600F /* Cell.m in Sources */,
+				CABC2C1B1AEECD540068600F /* MineField.m in Sources */,
+				CA7022F01AFD3376005EFF5D /* NSButtonCellTitle.m in Sources */,
+				CA281EBE1AEEC8F400B94E77 /* MyMatrix.m in Sources */,
 				CA975ACA1ADD8B2C00D808BB /* ViewController.m in Sources */,
 				CA975AC71ADD8B2C00D808BB /* main.m in Sources */,
 				CA975AC51ADD8B2C00D808BB /* AppDelegate.m in Sources */,
@@ -407,6 +432,7 @@
 				CA975AE01ADD8B2D00D808BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CA975AE11ADD8B2D00D808BB /* Build configuration list for PBXNativeTarget "MinesweeperTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +441,7 @@
 				CA975AE31ADD8B2D00D808BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

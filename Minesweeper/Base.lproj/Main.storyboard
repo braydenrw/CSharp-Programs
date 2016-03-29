@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6198" systemVersion="14A297b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6198"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7702"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -641,17 +641,17 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider=""/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Window Controller - Window-->
+        <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                    <window key="window" title="Minesweeper" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
@@ -662,20 +662,537 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="74" y="221"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="340" height="378"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <matrix verticalHuggingPriority="750" mode="highlight" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOs-n0-W86" customClass="MyMatrix">
+                                <rect key="frame" x="20" y="20" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="eA3-te-hPM"/>
+                                    <constraint firstAttribute="width" constant="300" id="ny5-cr-Yys"/>
+                                </constraints>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                <size key="cellSize" width="30" height="30"/>
+                                <buttonCell key="prototype" type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aGI-f5-Sbh" customClass="NSButtonCellTitle">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system" size="23"/>
+                                </buttonCell>
+                                <cells>
+                                    <column>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Xpo-YW-hHt" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JeG-cJ-dfF" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Taz-4d-exT" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9Kz-37-Ex1" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Y6a-Ck-Vxe" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Dbu-z9-UHE" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Rfv-Qn-ZzX" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Qsd-9E-tef" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="w5n-5P-V7j" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="D9E-5p-IHB" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                    </column>
+                                    <column>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="D9o-7j-jHW" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HBg-GL-Sst" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eQt-wP-p4q" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4Yj-4R-ndn" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Krh-AM-dqc" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pe7-I4-Ehw" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2nV-Cg-YM2" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OZb-YX-82L" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Jm6-I1-mWD" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tLX-sK-dEH" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                    </column>
+                                    <column>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jaL-6t-h9t" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qgI-4V-PUp" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gLE-VS-uEY" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VYQ-jO-MM4" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MgR-PT-lDf" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OC8-sy-Ito" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="T3e-da-Xug" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kQA-L0-hfu" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="88W-tP-gf2" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="siS-z8-hPW" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                    </column>
+                                    <column>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="N8L-Hl-ah4" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="m5B-e3-fPM" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="W0a-9a-hGE" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="TK3-vE-kF6" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="oSR-mM-iTf" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="J0H-WU-gYk" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6cJ-0t-cJo" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="c6I-HP-gEg" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ICY-vC-vf7" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aYx-hI-Nuy" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                    </column>
+                                    <column>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tsQ-xF-4BI" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yNv-KP-btp" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1Ue-cQ-duu" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xte-dr-S1H" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="D2p-bO-bFD" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zge-5z-sXw" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mYk-fj-awy" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DGS-bR-TUt" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="63T-uE-KA7" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Kz7-6W-tKA" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                    </column>
+                                    <column>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Jk2-gP-lpZ" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VQc-9R-QIh" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hFu-Sh-qYv" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="q8q-KA-FyA" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kCv-gQ-i0q" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="KlV-NT-W3G" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="NYx-FY-dFH" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dle-Oi-JOu" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="apk-e9-lrq" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="C0J-EB-0EZ" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                    </column>
+                                    <column>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VkN-Qv-rqN" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6r3-9B-Nk3" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zxD-Pa-Tjk" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="COS-Ls-izj" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FTf-pi-iXg" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DDP-A2-uXs" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="T1o-ZV-irD" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="J8X-Qe-oWG" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FAw-AX-9nB" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Knd-9a-Aui" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                    </column>
+                                    <column>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dmw-eR-C0Y" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Akl-8j-7sx" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Lqo-MP-11V" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="p6Q-PS-IvS" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pKL-Ps-nPq" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ksf-s7-qzt" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Sq9-i4-z1Q" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WcU-2j-Aua" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wfL-Mm-kDN" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Jts-fN-rw5" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                    </column>
+                                    <column>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cUQ-bR-Gn5" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="TYg-n6-qPL" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SzL-WU-t3g" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bAd-F0-aYy" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zW8-4U-iJ0" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gm1-cd-wqZ" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="or9-LA-pgw" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ep0-1P-bfA" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aFH-uI-LcX" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aOd-8Q-O3j" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                    </column>
+                                    <column>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="98T-Vp-VX6" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="W47-vm-Dat" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Rma-Rz-RdW" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="G39-L9-4tb" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Yx1-zO-Mxs" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="X3K-JT-9sj" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ubh-vC-thu" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="592-ab-VgP" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="beX-Bl-jp4" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                        <buttonCell type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="TO7-O6-9P0" customClass="NSButtonCellTitle">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system" size="23"/>
+                                        </buttonCell>
+                                    </column>
+                                </cells>
+                                <connections>
+                                    <action selector="matrixCellSelected:" target="XfG-lQ-9wD" id="eGw-dT-W6n"/>
+                                </connections>
+                            </matrix>
+                            <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="SpV-HJ-pHK">
+                                <rect key="frame" x="20" y="326" width="300" height="5"/>
+                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <font key="titleFont" metaFont="system"/>
+                            </box>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fhg-Zs-TUw">
+                                <rect key="frame" x="18" y="334" width="117" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="112" id="6H3-lJ-RkD"/>
+                                    <constraint firstAttribute="height" constant="21" id="gVD-RO-37M"/>
+                                </constraints>
+                                <popUpButtonCell key="cell" type="push" title="Beginner" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="cwR-Jq-cJF" id="7ac-es-Pun">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="VgH-Xp-IiU">
+                                        <items>
+                                            <menuItem title="Beginner" state="on" id="cwR-Jq-cJF"/>
+                                            <menuItem title="Intermediate" id="BF4-GW-hAl"/>
+                                            <menuItem title="Advanced" id="LrR-0s-nG6"/>
+                                            <menuItem title="Expert" id="yxs-XJ-qob"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="levelSelect:" target="XfG-lQ-9wD" id="onU-od-3dx"/>
+                                </connections>
+                            </popUpButton>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pll-mt-J0W">
+                                <rect key="frame" x="244" y="337" width="76" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="PKk-g9-bVz"/>
+                                    <constraint firstAttribute="height" constant="21" id="uAK-bT-rCo"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="999" drawsBackground="YES" id="6Lg-rp-OuF">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3HB-y3-mxg">
+                                <rect key="frame" x="134" y="330" width="108" height="32"/>
+                                <buttonCell key="cell" type="push" title="New Game" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Wha-Vk-2eR">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="newGame:" target="XfG-lQ-9wD" id="tAC-LQ-3Ok"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="pll-mt-J0W" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="0Jn-Nl-p3J"/>
+                            <constraint firstItem="bOs-n0-W86" firstAttribute="trailing" secondItem="SpV-HJ-pHK" secondAttribute="trailing" id="6mI-uc-HpD"/>
+                            <constraint firstItem="bOs-n0-W86" firstAttribute="top" secondItem="SpV-HJ-pHK" secondAttribute="bottom" constant="8" id="75z-yB-3Vu"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="bOs-n0-W86" secondAttribute="bottom" constant="20" id="9II-u2-HOy"/>
+                            <constraint firstItem="pll-mt-J0W" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3HB-y3-mxg" secondAttribute="trailing" constant="8" id="HOY-Uf-Gnu"/>
+                            <constraint firstItem="fhg-Zs-TUw" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="Q7z-KJ-DnM"/>
+                            <constraint firstItem="bOs-n0-W86" firstAttribute="leading" secondItem="SpV-HJ-pHK" secondAttribute="leading" id="RJa-mf-Gvy"/>
+                            <constraint firstItem="fhg-Zs-TUw" firstAttribute="leading" secondItem="bOs-n0-W86" secondAttribute="leading" id="RRa-z7-151"/>
+                            <constraint firstAttribute="trailing" secondItem="bOs-n0-W86" secondAttribute="trailing" constant="20" id="SBS-0D-Ohy"/>
+                            <constraint firstItem="3HB-y3-mxg" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="Swp-x8-33N"/>
+                            <constraint firstItem="bOs-n0-W86" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Wlk-r7-xLX"/>
+                            <constraint firstItem="3HB-y3-mxg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fhg-Zs-TUw" secondAttribute="trailing" constant="8" id="Z1b-kp-HsW"/>
+                            <constraint firstItem="pll-mt-J0W" firstAttribute="trailing" secondItem="bOs-n0-W86" secondAttribute="trailing" id="cEa-i7-yb4"/>
+                            <constraint firstAttribute="centerX" secondItem="bOs-n0-W86" secondAttribute="centerX" id="ckI-sr-QCd"/>
+                            <constraint firstItem="SpV-HJ-pHK" firstAttribute="top" secondItem="fhg-Zs-TUw" secondAttribute="bottom" constant="8" id="gpB-vA-zxc"/>
+                            <constraint firstItem="pll-mt-J0W" firstAttribute="centerY" secondItem="3HB-y3-mxg" secondAttribute="centerY" id="mKk-mO-Y3J"/>
+                            <constraint firstAttribute="bottom" secondItem="bOs-n0-W86" secondAttribute="bottom" constant="20" id="q0j-jv-gi1"/>
+                            <constraint firstAttribute="centerX" secondItem="3HB-y3-mxg" secondAttribute="centerX" priority="750" id="uf5-QG-Kx8"/>
+                            <constraint firstItem="pll-mt-J0W" firstAttribute="centerY" secondItem="fhg-Zs-TUw" secondAttribute="centerY" id="vj3-3I-BEH"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="heightConstraint" destination="eA3-te-hPM" id="zoJ-0P-2o4"/>
+                        <outlet property="mineFieldMatrix" destination="bOs-n0-W86" id="spf-Sr-tmn"/>
+                        <outlet property="scoreTextField" destination="pll-mt-J0W" id="x2D-wF-Uuy"/>
+                        <outlet property="widthConstraint" destination="ny5-cr-Yys" id="a3c-W0-BAc"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="-155" y="715"/>
         </scene>
     </scenes>
 </document>
